@@ -19,13 +19,17 @@ namespace Inventario
             bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
                         "~/Scripts/modernizr-*"));
 
-            bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
-                      "~/Scripts/bootstrap.js",
-                      "~/Scripts/respond.js"));
+            bundles.Add(new ScriptBundle("~/bundles/metro").Include(
+                "~/Scripts/metro.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrap.css",
-                      "~/Content/site.css"));
+                "~/Content/Styles/Site.css"));
+
+            bundles.Add(new StyleBundle("~/Content/metro").Include(                
+                "~/Content/Styles/Metro/metro.min.css",
+                "~/Content/Styles/Metro/metro-icons.min.css",
+                "~/Content/Styles/Metro/metro-responsive.min.css",
+                "~/Content/Styles/Metro/metro-schemes.min.css"));
         }
     }
 }
