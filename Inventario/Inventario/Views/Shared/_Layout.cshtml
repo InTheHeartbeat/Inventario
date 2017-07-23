@@ -1,4 +1,5 @@
-﻿@model Inventario.Models.BaseModel
+﻿@using Inventario.Base.Enums
+@model Inventario.Models.BaseModel
 
 <!DOCTYPE html>
 <html>
@@ -7,47 +8,103 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - My ASP.NET Application</title>
     @Styles.Render("~/Content/css")
-    @Styles.Render("~/Content/metro")
     @Scripts.Render("~/bundles/modernizr")
     @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/metro")
-    @RenderSection("scripts", required: false)        
+    @RenderSection("scripts", required: false)
+
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Anton|Raleway" rel="stylesheet">
 </head>
 <body>
+    
 
-<div id="sidebar-left">
-    <ul class="sidebar darcula" style="width: 200px; height: 100%; float: left;">
-        <li><a href="#">
-            <span class="mif-apps icon"></span>
-            <span class="title">all items</span>
-            <span class="counter">0</span>
-        </a></li>
-        <li><a href="#">
-            <span class="mif-vpn-publ icon"></span>
-            <span class="title">websites</span>
-            <span class="counter">0</span>
-        </a></li>
-        <li class="active"><a href="#">
-            <span class="mif-drive-eta icon"></span>
-            <span class="title">Virtual machines</span>
-            <span class="counter">0</span>
-        </a></li>
-        <li><a href="#">
-            <span class="mif-cloud icon"></span>
-            <span class="title">Cloud services</span>
-            <span class="counter">0</span>
-        </a></li>
-        <li><a href="#">
-            <span class="mif-database icon"></span>
-            <span class="title">SQL Databases</span>
-            <span class="counter">0</span>
-        </a></li>
-    </ul>
+<header class="header-bar">
+    <div class="header-title">
+        <h3>@Model.CurrentProject</h3>
+    </div>
+    <div class="header-bar-menu-container">
+        <ul id="header-bar-menu">
+            
+        </ul>
+    </div>
+</header>
+    
+<div class="sidebar">
+    <div class="sidebar-header">
+        <span class="company">Company</span>
+        <div class="sub-header">
+            <span class="title">Inventario</span>
+        </div>
+    </div>
+    <div class="sidebar-items-container">
+        <h4 class="label">Main</h4>
+        <ul>
+            <li class="active">Dashboard</li>
+            <li class="droplink">                
+                Operations                                    
+                <ul>
+                    <li>Add entities</li>
+                    <li>Get entities</li>
+                    <li>Collision</li>
+                </ul>                
+            </li>
+            <li>Settings</li>
+        </ul>
+        <h5>All rights reserved. <br>Tyner©@DateTime.Now.Year</h5>
+    </div>
 </div>
+
+
 
 <div class="container body-content">
     @RenderBody()
-    
+
 </div>
+    
+<script type="text/javascript">
+    var Speed = 0.02;
+    var Direction = [3, 3];
+
+    var Object = $('.header-title');
+
+
+    var iterations = 0;
+    
+    var x = 0, y = 0;
+    var angle=0;
+    function worker() {
+        
+        
+        
+            var backgroundPos = Object.css('backgroundPosition').split(" ");
+
+            var xPos = backgroundPos[0];
+            var yPos = backgroundPos[1];
+
+            x += (Speed * Direction[0]);
+            y += (Speed * Direction[1]);
+
+            Object.css('backgroundPosition', x + "% " + y + "%");
+            if (iterations > 0) {
+                
+                angle =  (Math.random() * (0.5 - (-0.5)) + (-0.5)) / 10;
+                Direction[0] = Direction[0] * Math.cos(angle) - Direction[1] * Math.sin(angle);
+                Direction[1] = Direction[0] * Math.sin(angle) + Direction[1] * Math.cos(angle);
+            if (angle >= 1)
+                angle = 0;
+            if (angle <= -1)
+                angle = -angle;
+        } else {
+            iterations = Math.random() * 100;
+            
+            x = 0;
+            y = 0;
+        }
+    }
+
+
+
+</script>
+
 </body>
 </html>

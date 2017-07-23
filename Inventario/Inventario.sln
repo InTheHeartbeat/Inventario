@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Inventario", "Inventario\In
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Inventario.Tests", "Inventario.Tests\Inventario.Tests.csproj", "{A506F690-805A-48FE-9B35-25770B339B86}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Inventario.Data", "Inventario.Data\Inventario.Data.csproj", "{91D6ECA2-E3F4-4DF0-A414-13495F9B9232}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Inventario.Consilio.Data", "Inventario.Consilio.Data\Inventario.Consilio.Data.csproj", "{A43662AA-B581-4194-83F4-D49DAC34CD80}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{A506F690-805A-48FE-9B35-25770B339B86}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A506F690-805A-48FE-9B35-25770B339B86}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A506F690-805A-48FE-9B35-25770B339B86}.Release|Any CPU.Build.0 = Release|Any CPU
+		{91D6ECA2-E3F4-4DF0-A414-13495F9B9232}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{91D6ECA2-E3F4-4DF0-A414-13495F9B9232}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{91D6ECA2-E3F4-4DF0-A414-13495F9B9232}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{91D6ECA2-E3F4-4DF0-A414-13495F9B9232}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A43662AA-B581-4194-83F4-D49DAC34CD80}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A43662AA-B581-4194-83F4-D49DAC34CD80}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A43662AA-B581-4194-83F4-D49DAC34CD80}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A43662AA-B581-4194-83F4-D49DAC34CD80}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

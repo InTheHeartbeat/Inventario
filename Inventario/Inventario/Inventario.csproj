@@ -135,26 +135,29 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Base\Enums\ProjectName.cs" />
+    <Compile Include="Controllers\Consilio\ConsilioController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Filters\CultureAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\BaseModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resources\Lang.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Lang.resx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\Styles\Metro\metro-colors.css" />
-    <Content Include="Content\Styles\Metro\metro-colors.min.css" />
-    <Content Include="Content\Styles\Metro\metro-icons.css" />
-    <Content Include="Content\Styles\Metro\metro-icons.min.css" />
-    <Content Include="Content\Styles\Metro\metro-responsive.css" />
-    <Content Include="Content\Styles\Metro\metro-responsive.min.css" />
-    <Content Include="Content\Styles\Metro\metro-rtl.css" />
-    <Content Include="Content\Styles\Metro\metro-rtl.min.css" />
-    <Content Include="Content\Styles\Metro\metro-schemes.css" />
-    <Content Include="Content\Styles\Metro\metro-schemes.min.css" />
-    <Content Include="Content\Styles\Metro\metro.css" />
-    <Content Include="Content\Styles\Metro\metro.min.css" />
+    <Content Include="Content\1.png" />
+    <Content Include="Content\Images\Backgrounds\MainBackground.jpg" />
+    <Content Include="Content\Images\Icons\ic-full-size.png" />
+    <Content Include="Content\Images\Icons\ic-home.png" />
+    <Content Include="Content\Images\Icons\ic-arrow-right.png" />
+    <Content Include="Content\Images\Icons\ic-project.png" />
+    <Content Include="Content\Images\Icons\ic-add.png" />
     <Content Include="Content\Styles\Site.css">
       <DependentUpon>Site.less</DependentUpon>
     </Content>
@@ -162,17 +165,12 @@
       <DependentUpon>Site.css</DependentUpon>
     </Content>
     <Content Include="favicon.ico" />
-    <Content Include="Fonts\metro.svg" />
     <Content Include="Global.asax" />
     <None Include="compilerconfig.json" />
     <None Include="compilerconfig.json.defaults">
       <DependentUpon>compilerconfig.json</DependentUpon>
     </None>
     <None Include="Content\Styles\Site.less" />
-    <Content Include="Fonts\selection.json" />
-    <Content Include="Fonts\metro.woff" />
-    <Content Include="Fonts\metro.ttf" />
-    <Content Include="Fonts\metro.eot" />
     <None Include="Scripts\jquery-3.1.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.1.1.js" />
     <Content Include="Scripts\jquery-3.1.1.min.js" />
@@ -185,8 +183,6 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
-    <Content Include="Scripts\metro.js" />
-    <Content Include="Scripts\metro.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.matchmedia.addListener.js" />
@@ -205,6 +201,7 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Consilio\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -214,6 +211,13 @@
   <ItemGroup>
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Lang.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Lang.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>Resources</CustomToolNamespace>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
